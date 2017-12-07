@@ -25,7 +25,7 @@ Param (
         Mandatory = $True,
         ParameterSetName = "Single"
     )]
-    [Int] $Solution,
+    [String] $Solution,
 
     [Parameter(
         Mandatory = $True,
