@@ -90,5 +90,11 @@ If ($All) {
         }
     }
 } Else {
-    Invoke-Crypt -Path "$PSScriptRoot\Door $Door\Door $Door$Part.js" -Passphrase $Solution
+    $LeadingDoor = ""
+
+    If ($Door.length -Lt 10) {
+        $LeadingDoor = "0"
+    }
+
+    Invoke-Crypt -Path "$PSScriptRoot\Door $LeadingDoor$Door\Door $Door$Part.js" -Passphrase $Solution
 }
