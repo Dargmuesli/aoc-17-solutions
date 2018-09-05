@@ -63,7 +63,7 @@ ENCRYPTED
 
         If ($Out) {
             [System.IO.File]::WriteAllLines($Path, $Out)
-            Write-Host "Encryped $BaseName." -ForegroundColor "Green"
+            Write-Host "${Task}ed $BaseName." -ForegroundColor "Green"
         }
     }
 }
