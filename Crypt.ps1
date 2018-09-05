@@ -42,7 +42,7 @@ Function Invoke-Crypt($Path, $Passphrase) {
     $Out = ""
 
     If ($Content) {
-        $ContentRaw = (Get-Content -Path $Path -Raw).Replace("`r`nENCRYPTED", "")
+        $ContentRaw = (Get-Content -Path $Path -Raw) -replace ("(`r|`n|`r`n)ENCRYPTED", "")
 
         If ($Task -Eq "Encrypt") {
             If ($Content[1] -Ne "ENCRYPTED") {
