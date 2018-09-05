@@ -96,5 +96,7 @@ If ($All) {
         $LeadingDoor = "0"
     }
 
-    Invoke-Crypt -Path "$PSScriptRoot\Door $LeadingDoor$Door\Door $Door$Part.js" -Passphrase $Solution
+    $Path = Join-Path -Path $PSScriptRoot -ChildPath "Door $LeadingDoor$Door" | Join-Path -ChildPath "Door $Door$Part.js"
+
+    Invoke-Crypt -Path $Path -Passphrase $Solution
 }
